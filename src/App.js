@@ -3,7 +3,7 @@ import './App.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'react-loader-spinner';
 import SearchBar from './components/SearchBar';
-import fetchImages from './services/imagesApi';
+import { fetchImages } from './services/imagesApi';
 import ImageGallery from './components/ImageGallery';
 import Button from './common/Button';
 import Notifications from './common/Notifications/Notifications';
@@ -40,10 +40,10 @@ class App extends Component {
   };
 
   fetchImagesByQuery = (prevProps, prevState) => {
-    const { query, page } = this.state;
+    const { query, page, perPage } = this.state;
 
     this.setState({ isLoading: true });
-    fetchImages(query, page)
+    fetchImages(query, page, perPage)
       .then(result => {
         this.setState(prevState => ({
           gallery: [...prevState.gallery, ...result],
@@ -70,8 +70,8 @@ class App extends Component {
         <ImageGallery gallery={gallery} />
         {isLoading && (
           <Loader
-            type="ThreeDots"
-            color="#3f51b5"
+            type="Puff"
+            color="#00BFFF"
             height={100}
             width={100}
             timeout={3000}
