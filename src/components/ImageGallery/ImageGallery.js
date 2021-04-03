@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './ImageGallery.module.css';
 import PropTypes from 'prop-types';
 import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
-import Modal from '../Modal/Modal';
+import Modal from '../../common/Modal';
 
 class ImageGallery extends Component {
   state = {

@@ -9,7 +9,7 @@ const ImageGalleryItem = ({ elem, getImgForModal }) => {
       <img
         src={webformatURL}
         alt={tags}
-        className={styles.image}
+        className={styles.ImageGalleryItem - image}
         onClick={() => getImgForModal({ elem })}
       />
     </li>

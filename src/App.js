@@ -63,7 +63,6 @@ class App extends Component {
   };
   render() {
     const { gallery, fetchLength, isLoading, query, error } = this.state;
-
     return (
       <div className="App">
         <h1>Search image</h1>
