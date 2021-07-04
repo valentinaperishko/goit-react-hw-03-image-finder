@@ -12,6 +12,7 @@ class App extends Component {
   state = {
     query: '',
     page: 1,
+    perPage: 12,
     gallery: [],
     fetchLength: null,
     isLoading: false,
@@ -55,10 +56,10 @@ class App extends Component {
       })
       .finally(() => {
         this.setState({ isLoading: false });
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: 'smooth',
-        });
+        // window.scrollTo({
+        //   top: document.documentElement.scrollHeight,
+        //   behavior: 'smooth',
+        // });
       });
   };
   render() {
@@ -79,6 +80,7 @@ class App extends Component {
         )}
         {fetchLength === 12 && !isLoading && (
           <Button getNewPage={this.setNewPage} />
+         
         )}
 
         <Notifications
